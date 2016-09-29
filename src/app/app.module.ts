@@ -9,15 +9,14 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
  * Platform and Environment providers/directives/pipes
  */
 import { ENV_PROVIDERS } from './environment';
-import { ROUTES } from './app.routes';
-// App is our top level component
-import { App } from './app.component';
+import { ROUTES } from './app.routing';
+// AppComponent is our top level component
+import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InteralStateType } from './app.service';
-import { Home } from './home';
-import { About } from './about';
-import { NoContent } from './no-content';
-import { XLarge } from './home/x-large';
+import { NoContentComponent } from './no-content';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {EasyfillComponent} from "./easyfill/easyfill.component";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -35,13 +34,12 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ App ],
+  bootstrap: [ AppComponent ],
   declarations: [
-    App,
-    About,
-    Home,
-    NoContent,
-    XLarge
+    AppComponent,
+    NoContentComponent,
+    DashboardComponent,
+    EasyfillComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
