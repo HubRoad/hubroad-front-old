@@ -1,19 +1,14 @@
-<nav>
-  <span>
-    <a [routerLink]=" ['./'] ">
-      Dashboard
-    </a>
-  </span>
-  |
-  <span>
-    <a [routerLink]=" ['./easyfill'] ">
-      Easyfill
-    </a>
-  </span>
-  |
-</nav>
-
 <main>
+  <nav>
+    <span>
+      <a routerLink="dashboard">Dashboard</a>
+    </span>
+      |
+      <span>
+      <a routerLink="easyfill">Easyfill</a>
+    </span>
+  </nav>
+  <hr-page-title></hr-page-title>
   <router-outlet></router-outlet>
 </main>
 

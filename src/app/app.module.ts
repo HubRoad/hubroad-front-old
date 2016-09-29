@@ -1,26 +1,26 @@
+/* Import Modules */
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { EasyfillModule } from './easyfill/easyfill.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+
+/* Import Components */
+import { AppComponent } from './app.component';
+import { NoContentComponent } from "./no-content/no-content.component";
 
 /*
  * Platform and Environment providers/directives/pipes
  */
+import { routing } from './app.routing';
+
 import { ENV_PROVIDERS } from './environment';
-import { ROUTES } from './app.routing';
-// AppComponent is our top level component
-import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InteralStateType } from './app.service';
 
-/* Dashboard Imports */
-import { DashboardModule } from './dashboard/dashboard.module';
-
-/* Easyfill Imports */
-import { EasyfillModule } from './easyfill/easyfill.module';
-import {NoContentComponent} from "./no-content/no-content.component";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -45,11 +45,11 @@ type StoreType = {
   ],
   imports: [ // import Angular's modules
     BrowserModule,
+    CoreModule,
+    SharedModule,
     DashboardModule,
     EasyfillModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    routing
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

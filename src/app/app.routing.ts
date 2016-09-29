@@ -1,9 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NoContentComponent } from './no-content/no-content.component';
-
-import { DataResolver } from './app.resolver';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {EasyfillComponent} from "./easyfill/easyfill.component";
+import {ModuleWithProviders} from "@angular/core";
 
 
 export const ROUTES: Routes = [
@@ -26,3 +25,6 @@ export const ROUTES: Routes = [
     component: NoContentComponent
   },
 ];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(ROUTES, {useHash: true});
+
