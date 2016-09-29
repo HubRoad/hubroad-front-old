@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { NoContentComponent } from './no-content';
+import { NoContentComponent } from './no-content/no-content.component';
 
 import { DataResolver } from './app.resolver';
 import {DashboardComponent} from "./dashboard/dashboard.component";
@@ -12,7 +12,17 @@ export const ROUTES: Routes = [
     redirectTo: '/dashboard',
     pathMatch: 'full'
   },
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'easyfill', component: EasyfillComponent},
-  { path: '**',    component: NoContentComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'easyfill',
+    component: EasyfillComponent
+  },
+  //Error 404: no content
+  {
+    path: '**',
+    component: NoContentComponent
+  },
 ];

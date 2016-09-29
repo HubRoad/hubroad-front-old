@@ -14,9 +14,13 @@ import { ROUTES } from './app.routing';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InteralStateType } from './app.service';
-import { NoContentComponent } from './no-content';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {EasyfillComponent} from "./easyfill/easyfill.component";
+
+/* Dashboard Imports */
+import { DashboardModule } from './dashboard/dashboard.module';
+
+/* Easyfill Imports */
+import { EasyfillModule } from './easyfill/easyfill.module';
+import {NoContentComponent} from "./no-content/no-content.component";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -37,12 +41,12 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    NoContentComponent,
-    DashboardComponent,
-    EasyfillComponent
+    NoContentComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
+    DashboardModule,
+    EasyfillModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
