@@ -19,7 +19,7 @@ import { routing } from './app.routing';
 
 import { ENV_PROVIDERS } from './environment';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InteralStateType } from './app.service';
+import { AppService, InteralStateType } from './app.service';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -28,7 +28,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppService
 ];
 
 type StoreType = {
@@ -61,7 +61,7 @@ type StoreType = {
   ]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef, public appState: AppState) {}
+  constructor(public appRef: ApplicationRef, public appState: AppService) {}
 
   hmrOnInit(store: StoreType) {
     if (!store || !store.state) return;

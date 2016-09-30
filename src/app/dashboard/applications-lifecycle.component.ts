@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Application} from "typedoc";
 import {ApplicationHR} from "./ApplicationHR";
 import {Http} from "@angular/http";
-import 'rxjs/add/operator/toPromise';
 import {ApplicationsLifeCycleService} from "./applications-lifecycle.service";
 
 @Component({

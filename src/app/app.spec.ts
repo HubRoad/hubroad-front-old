@@ -5,13 +5,13 @@ import {
 
 // Load the implementations that should be tested
 import { AppComponent } from './app.component';
-import { AppState } from './app.service';
+import { AppService } from './app.service';
 
 describe('AppComponent', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
-      AppState,
+      AppService,
       AppComponent
     ]}));
 

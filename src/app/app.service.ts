@@ -1,15 +1,29 @@
 import { Injectable } from '@angular/core';
+import {Http} from "@angular/http";
+import {UserHR} from "./UserHR";
+import 'rxjs/add/operator/toPromise';
 
 export type InteralStateType = {
   [key: string]: any
 };
 
 @Injectable()
-export class AppState {
+export class AppService {
   _state: InteralStateType = { };
 
-  constructor() {
+  private usersAPIUrl = "app/api_users";
 
+  constructor(private http: Http) { }
+
+  getUsers(): Promise<UserHR[]> {
+    return this.http.get(this.usersAPIUrl)
+      .toPromise()
+      .then(resp => resp.json().data as UserHR[])
+      .catch(this.handleError);
+  }
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 
   // already return a clone of the current state
