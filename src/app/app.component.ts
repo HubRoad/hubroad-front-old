@@ -4,7 +4,11 @@
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
 
 import { AppState } from './app.service';
-declare var $:any;
+
+//Used to call AdminLTE.layout.fix() in the OnInit
+//Solve the screen onresize issue
+declare var $: any;
+
 /*
  * AppComponent Component
  * Top Level Component

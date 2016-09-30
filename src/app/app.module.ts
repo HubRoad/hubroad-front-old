@@ -21,6 +21,9 @@ import { ENV_PROVIDERS } from './environment';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InteralStateType } from './app.service';
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -38,19 +41,20 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ AppComponent ],
-  declarations: [
-    AppComponent,
-    NoContentComponent
-  ],
   imports: [ // import Angular's modules
     BrowserModule,
     CoreModule,
     SharedModule,
     DashboardModule,
     EasyfillModule,
-    routing
+    routing,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
+  declarations: [
+    AppComponent,
+    NoContentComponent
+  ],
+  bootstrap: [ AppComponent ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS

@@ -2,7 +2,7 @@
 
 <div class="applications-lifecycle-list">
   <div class="application-lifecycle"
-       *ngFor="let appli of mockApplications"
+       *ngFor="let appli of applications"
        (click)="onSelectApplication(appli)"
        [class.selected]="appli === selectedApplication">
     <span>{{appli.id}} / {{appli.company}} / {{appli.title}}</span>
