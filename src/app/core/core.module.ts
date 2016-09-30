@@ -2,10 +2,9 @@
 import {NgModule} from "@angular/core";
 import { CommonModule } from '@angular/common';
 
-
 /* Import Components */
-import { PageTitleComponent } from './page-title.component';
-
+import {ProfilePanelComponent} from "./profile-panel.component";
+import {routing} from "../app.routing";
 
 /* Import Services */
 
@@ -13,10 +12,11 @@ import { PageTitleComponent } from './page-title.component';
 /* Module Definition */
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    routing
   ],
-  declarations: [ PageTitleComponent ],
-  exports: [ PageTitleComponent ],
+  declarations: [ ProfilePanelComponent ],
+  exports: [ ProfilePanelComponent ],
   providers: []
 })
 export class CoreModule { }

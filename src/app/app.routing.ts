@@ -23,7 +23,7 @@ export const ROUTES: Routes = [
   {
     path: '**',
     component: NoContentComponent
-  },
+  }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(ROUTES, {useHash: true});

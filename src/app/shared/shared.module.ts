@@ -10,7 +10,7 @@ import {HttpModule} from "@angular/http";
 
 @NgModule({
   imports: [ CommonModule ],
-  declarations: [],
+  declarations: [ ],
   exports: [ FormsModule, HttpModule, CommonModule ]
 })
 export class SharedModule { }

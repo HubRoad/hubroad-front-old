@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: 'easyfill.component.html'
 })
 export class EasyfillComponent implements OnInit {
+
     constructor() { }
 
     ngOnInit() { }
