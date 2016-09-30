@@ -1,10 +1,10 @@
 /*
  * Angular 2 decorators and services
  */
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, ViewEncapsulation, OnInit} from '@angular/core';
 
 import { AppState } from './app.service';
-
+declare var $:any;
 /*
  * AppComponent Component
  * Top Level Component
@@ -14,7 +14,7 @@ import { AppState } from './app.service';
   styleUrls: ['./app.component.css'],
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   url: string = ''
   constructor(
     public appState: AppState) {
@@ -23,6 +23,10 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('Initial AppComponent State', this.appState.state);
+    setTimeout(() => {
+      $.AdminLTE.layout.fix();
+    });
   }
+
 
 }

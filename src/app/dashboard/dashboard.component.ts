@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   //TODO: remove .toString() when fixed issue
@@ -11,5 +11,4 @@ export class DashboardComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
-
 }
