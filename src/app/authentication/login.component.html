@@ -1,0 +1,7 @@
+<h2>Login</h2>
+<div>
+  <label>Email: </label> <input #email />
+  <label>Password: </label> <input #password />
+  <button (click)="onSubmit(email.value, password.value); email.value=''; password.value=''">Submit</button>
+  <span>{{errorInfo}}</span>
+</div>

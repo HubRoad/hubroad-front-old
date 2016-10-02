@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {SharedModule} from "./shared/shared.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
 import {EasyfillModule} from "./easyfill/easyfill.module";
-import {LoggedInGuard} from "../logged-in.guard";
+import {AuthenticationGuard} from "../authentication/authentication.guard";
 import {user_routing} from "./user.routing";
 import {UserComponent} from "./user.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
@@ -21,7 +21,7 @@ import {TestComponent} from "./test.component";
     TestComponent
   ],
   providers: [
-    LoggedInGuard
+    AuthenticationGuard
   ]
 })
 export class UserModule { }

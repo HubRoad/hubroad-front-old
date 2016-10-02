@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class AuthentificationService {
+export class AuthenticationService {
 
   private  loggendIn = false;
 
@@ -12,7 +12,7 @@ export class AuthentificationService {
     this.loggendIn = !!localStorage.getItem('auth_token');
   }
 
-  login(email: string, password: string): Promise<any> {
+  login(email: string, password: string): Promise<boolean> {
     //let headers = new Headers();
     //headers.append('Content-Type', 'application/json');
 
@@ -20,13 +20,13 @@ export class AuthentificationService {
       .get(`app/login/?email=${email}&password=${password}`)
       .toPromise()
       .then(res => {
-        if (res.ok) {
+        //TODO: change when API
+        if (res.json().data.length == 1) {
           localStorage.setItem('auth_token', '1234');
           this.loggendIn = true;
           console.log('Logged In');
         }
-
-        return res;
+        return this.loggendIn;
       })
       .catch(err => console.error(err));
   }

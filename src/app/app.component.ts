@@ -17,8 +17,7 @@ declare var $: any;
  */
 @Component({
   selector: 'app',
-  styleUrls: ['./app.component.css'],
-  templateUrl: 'app.component.html'
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent implements OnInit {
   user: UserHR = {id: 0, firstName: "A", lastName: "B", notificationsNumber: 4};

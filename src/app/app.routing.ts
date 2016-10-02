@@ -1,13 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NoContentComponent } from './no-content/no-content.component';
-import {DashboardComponent} from "./user/dashboard/dashboard.component";
-import {EasyfillComponent} from "./user/easyfill/easyfill.component";
 import {ModuleWithProviders} from "@angular/core";
-import {LoginComponent} from "./login.component";
+import {LoginComponent} from "./authentication/login.component";
 import {HomeComponent} from "./home.component";
-import { LoggedInGuard } from './logged-in.guard';
-import {LogoutComponent} from "./logout.component";
+import { AuthenticationGuard } from './authentication/authentication.guard';
+import {LogoutComponent} from "./authentication/logout.component";
 import {UserComponent} from "./user/user.component";
+import {IsLoggedInGuard} from "./authentication/is-logged-in.guard";
 
 
 const ROUTES: Routes = [
@@ -17,16 +16,23 @@ const ROUTES: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [IsLoggedInGuard]
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
+    canActivate: [AuthenticationGuard]
   },
   {
     path: 'user',
     component: UserComponent,
-    canActivate: [LoggedInGuard]
+    canActivate: [AuthenticationGuard]
+  },
+  //404
+  {
+    path: '**',
+    component: NoContentComponent
   }
 ];
 

@@ -21,16 +21,19 @@ import { AppService, InteralStateType } from './app.service';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
-import {AuthentificationService} from "./authentification.service";
-import {LoggedInGuard} from "./logged-in.guard";
+import {AuthenticationService} from "./authentication/authentication.service";
+import {AuthenticationGuard} from "./authentication/authentication.guard";
 import {HomeComponent} from "./home.component";
-import {LoginComponent} from "./login.component";
-import {LogoutComponent} from "./logout.component";
+import {LoginComponent} from "./authentication/login.component";
+import {LogoutComponent} from "./authentication/logout.component";
 import {UserModule} from "./user/user.module";
+import {IsLoggedInGuard} from "./authentication/is-logged-in.guard";
 
-// Application wide providers
-const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS
+
+// Application Guards
+const APP_GUARDS = [
+  AuthenticationGuard,
+  IsLoggedInGuard
 ];
 
 type StoreType = {
@@ -43,6 +46,7 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
+  bootstrap: [ AppComponent ],
   imports: [ // import Angular's modules
     BrowserModule,
     SharedModule,
@@ -57,13 +61,12 @@ type StoreType = {
     LoginComponent,
     LogoutComponent
   ],
-  bootstrap: [ AppComponent ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS,
+    APP_RESOLVER_PROVIDERS,
     AppService,
-    AuthentificationService,
-    LoggedInGuard
+    AuthenticationService,
+    APP_GUARDS
   ]
 })
 export class AppModule {
