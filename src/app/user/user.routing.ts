@@ -19,17 +19,7 @@ const USER_ROUTES: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate: [AuthenticationGuard],
-        children: [
-          {
-            path: '',
-            redirectTo: 'list'
-          },
-          {
-            path: 'list',
-            component: ListDashboardComponent
-          }
-        ]
+        canActivate: [AuthenticationGuard]
       },
       {
         path: 'easyfill',

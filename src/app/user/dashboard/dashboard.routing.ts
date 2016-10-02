@@ -4,16 +4,20 @@ import {DashboardComponent} from "./dashboard.component";
 import {AuthenticationGuard} from "../../authentication/authentication.guard";
 import {ListDashboardComponent} from "./list/list-dashboard.component";
 import {CalendarDashboardComponent} from "./calendar/calendar-dashboard.component";
+import {UserComponent} from "../user.component";
 
 const DASHBOARD_ROUTES: Routes = [
+  {
+    path: 'user',
+    component: UserComponent,
+    children:[
       {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate: [AuthenticationGuard],
         children: [
           {
             path: '',
-            redirectTo: 'list'
+            redirectTo: 'calendar'
           },
           {
             path: 'list',
@@ -22,10 +26,16 @@ const DASHBOARD_ROUTES: Routes = [
           {
             path: 'calendar',
             component: CalendarDashboardComponent
+          },
+          {
+            path: 'test',
+            component: ListDashboardComponent
           }
         ]
       }
-    ];
+    ]
+  }
+];
 
 
 
