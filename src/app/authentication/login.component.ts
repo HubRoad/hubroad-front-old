@@ -19,11 +19,12 @@ export class LoginComponent implements OnInit {
     }
 
     this.userService.login(email, password)
-      .then(res => {
+      .then(() => {
         //TODO: modify when API
+        console.log('OK');
         this.router.navigate(['/user']);
+        location.reload(); //Better solution?
     });
-    console.log('OK'),
 
     this.router.navigate(['/user']);
 

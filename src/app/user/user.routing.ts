@@ -4,7 +4,6 @@ import {AuthenticationGuard} from "../authentication/authentication.guard";
 import {EasyfillComponent} from "./easyfill/easyfill.component";
 import {ModuleWithProviders} from "@angular/core";
 import {UserComponent} from "./user.component";
-import {TestComponent} from "./test.component";
 
 const USER_ROUTES: Routes = [
   {
@@ -24,10 +23,6 @@ const USER_ROUTES: Routes = [
         path: 'easyfill',
         component: EasyfillComponent,
         canActivate: [AuthenticationGuard]
-      },
-      {
-        path: 'test',
-        component: TestComponent
       }
     ]
   }

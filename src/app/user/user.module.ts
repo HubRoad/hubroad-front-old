@@ -7,7 +7,6 @@ import {user_routing} from "./user.routing";
 import {UserComponent} from "./user.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {EasyfillComponent} from "./easyfill/easyfill.component";
-import {TestComponent} from "./test.component";
 
 @NgModule({
   imports: [
@@ -17,8 +16,7 @@ import {TestComponent} from "./test.component";
     user_routing
   ],
   declarations: [
-    UserComponent,
-    TestComponent
+    UserComponent
   ],
   providers: [
     AuthenticationGuard
