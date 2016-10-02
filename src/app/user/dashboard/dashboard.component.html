@@ -8,9 +8,13 @@
 
 <!-- Main content -->
 <section class="content">
+  <div id="dashboard-navigation-bar">
+    <span><a routerLink="/user/dashboard/list" routerLinkActive="active">List</a></span> |
+    <span><a routerLink="/user/dashboard/calendar" routerLinkActive="active">Calendar</a></span>
+  </div>
 
   <!-- Your Page Content Here -->
-  <hr-applications-lifecycle></hr-applications-lifecycle>
+  <router-outlet></router-outlet>
 
 </section>
 <!-- /.content -->
