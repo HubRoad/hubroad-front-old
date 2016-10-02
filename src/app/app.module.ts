@@ -24,11 +24,15 @@ import { AppService, InteralStateType } from './app.service';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import {UserService} from "./user.service";
+import {LoggedInGuard} from "./logged-in.guard";
+import {HomeComponent} from "./home.component";
+import {LoginComponent} from "./login.component";
+import {LogoutComponent} from "./logout.component";
 
 // Application wide providers
 const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
-  AppService
+  ...APP_RESOLVER_PROVIDERS
 ];
 
 type StoreType = {
@@ -52,12 +56,18 @@ type StoreType = {
   ],
   declarations: [
     AppComponent,
-    NoContentComponent
+    NoContentComponent,
+    HomeComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    AppService,
+    UserService,
+    LoggedInGuard
   ]
 })
 export class AppModule {
