@@ -3,7 +3,7 @@ import {Http} from "@angular/http";
 
 @Component({
     selector: 'hr-home',
-    template: ``
+    template: `HOME`
 })
 export class HomeComponent implements OnInit {
 

@@ -1,10 +1,7 @@
 /* Import Modules */
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { EasyfillModule } from './easyfill/easyfill.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from './user/shared/shared.module';
 
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
@@ -15,7 +12,7 @@ import { NoContentComponent } from "./no-content/no-content.component";
 /*
  * Platform and Environment providers/directives/pipes
  */
-import { routing } from './app.routing';
+import { app_routing } from './app.routing';
 
 import { ENV_PROVIDERS } from './environment';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
@@ -24,11 +21,12 @@ import { AppService, InteralStateType } from './app.service';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
-import {UserService} from "./user.service";
+import {AuthentificationService} from "./authentification.service";
 import {LoggedInGuard} from "./logged-in.guard";
 import {HomeComponent} from "./home.component";
 import {LoginComponent} from "./login.component";
 import {LogoutComponent} from "./logout.component";
+import {UserModule} from "./user/user.module";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -47,11 +45,9 @@ type StoreType = {
 @NgModule({
   imports: [ // import Angular's modules
     BrowserModule,
-    CoreModule,
     SharedModule,
-    DashboardModule,
-    EasyfillModule,
-    routing,
+    UserModule,
+    app_routing,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [
@@ -66,7 +62,7 @@ type StoreType = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     AppService,
-    UserService,
+    AuthentificationService,
     LoggedInGuard
   ]
 })

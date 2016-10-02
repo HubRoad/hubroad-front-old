@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http} from "@angular/http";
-import {UserHR} from "./UserHR";
+import {UserHR} from "./user/UserHR";
 
 export type InteralStateType = {
   [key: string]: any

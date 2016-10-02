@@ -4,8 +4,8 @@
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
 
 import { AppService } from './app.service';
-import {UserHR} from "./UserHR";
-import {ApplicationHR} from "./dashboard/ApplicationHR";
+import {UserHR} from "./user/UserHR";
+import {ApplicationHR} from "./user/dashboard/ApplicationHR";
 
 //Used to call AdminLTE.layout.fix() in the OnInit
 //Solve the screen onresize issue
