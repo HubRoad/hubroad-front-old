@@ -9,7 +9,7 @@ import { bootloader } from '@angularclass/hmr';
  * our top level module that holds all of our components
  */
 import { AppModule } from './app';
-
+declare var $: any;
 /*
  * Bootstrap our Angular app with a top level NgModule
  */

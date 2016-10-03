@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     console.log('Initial AppComponent State', this.appService.state);
     setTimeout(() => {
-      $.AdminLTE.layout.fix();
+      //$.AdminLTE.layout.fix();
     });
   }
 }

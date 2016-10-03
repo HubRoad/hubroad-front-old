@@ -13,6 +13,7 @@ import '@angular/common';
 import '@angular/forms';
 import '@angular/http';
 import '@angular/router';
+declare var $: any;
 
 // AngularClass
 import '@angularclass/hmr';
