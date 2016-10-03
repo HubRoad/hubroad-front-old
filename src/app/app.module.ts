@@ -23,7 +23,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import {AuthenticationService} from "./authentication/authentication.service";
 import {AuthenticationGuard} from "./authentication/authentication.guard";
-import {HomeComponent} from "./home.component";
+import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./authentication/login.component";
 import {LogoutComponent} from "./authentication/logout.component";
 import {UserModule} from "./user/user.module";

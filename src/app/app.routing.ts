@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NoContentComponent } from './no-content/no-content.component';
 import {ModuleWithProviders} from "@angular/core";
 import {LoginComponent} from "./authentication/login.component";
-import {HomeComponent} from "./home.component";
+import {HomeComponent} from "./home/home.component";
 import { AuthenticationGuard } from './authentication/authentication.guard';
 import {LogoutComponent} from "./authentication/logout.component";
 import {UserComponent} from "./user/user.component";
