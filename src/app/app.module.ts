@@ -28,6 +28,7 @@ import {LoginComponent} from "./authentication/login.component";
 import {LogoutComponent} from "./authentication/logout.component";
 import {UserModule} from "./user/user.module";
 import {IsLoggedInGuard} from "./authentication/is-logged-in.guard";
+import {AdminComponent} from "./admin/admin.component";
 
 
 // Application Guards
@@ -59,7 +60,8 @@ type StoreType = {
     NoContentComponent,
     HomeComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    AdminComponent
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

@@ -7,6 +7,7 @@ import { AuthenticationGuard } from './authentication/authentication.guard';
 import {LogoutComponent} from "./authentication/logout.component";
 import {UserComponent} from "./user/user.component";
 import {IsLoggedInGuard} from "./authentication/is-logged-in.guard";
+import {AdminComponent} from "./admin/admin.component";
 
 
 const ROUTES: Routes = [
@@ -27,6 +28,11 @@ const ROUTES: Routes = [
   {
     path: 'user',
     component: UserComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
     canActivate: [AuthenticationGuard]
   },
   //404

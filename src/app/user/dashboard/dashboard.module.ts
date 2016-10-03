@@ -7,6 +7,7 @@ import {ListDashboardComponent} from "./list/list-dashboard.component";
 import {CalendarDashboardComponent} from "./calendar/calendar-dashboard.component";
 import {AuthenticationGuard} from "../../authentication/authentication.guard";
 import {dashboard_routing} from "./dashboard.routing";
+import {HorizontalTimelineComponent} from "./list/horizontal-timeline/horizontal-timeline.component";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {dashboard_routing} from "./dashboard.routing";
     DashboardComponent,
     ApplicationsLifecycleComponent ,
     ListDashboardComponent,
-    CalendarDashboardComponent
+    CalendarDashboardComponent,
+    HorizontalTimelineComponent
   ],
   exports: [
     DashboardComponent,

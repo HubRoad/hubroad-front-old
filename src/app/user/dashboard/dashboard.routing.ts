@@ -17,7 +17,7 @@ const DASHBOARD_ROUTES: Routes = [
         children: [
           {
             path: '',
-            redirectTo: 'calendar'
+            redirectTo: 'list'
           },
           {
             path: 'list',
@@ -26,17 +26,10 @@ const DASHBOARD_ROUTES: Routes = [
           {
             path: 'calendar',
             component: CalendarDashboardComponent
-          },
-          {
-            path: 'test',
-            component: ListDashboardComponent
           }
         ]
       }
     ]
   }
 ];
-
-
-
 export const dashboard_routing: ModuleWithProviders = RouterModule.forChild(DASHBOARD_ROUTES);
